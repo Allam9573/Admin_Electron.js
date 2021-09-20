@@ -33,6 +33,19 @@ function crearCliente() {
         slashes: true
     }));
 }
+function nuevoProducto() {
+    nuevoProducto = new BrowserWindow({
+        width: 1000,
+        height: 500,
+        title: 'Registrar nuevo producto'
+    });
+    nuevoProducto.setMenu(null);
+    nuevoProducto.loadURL(url.format({
+        pathname: path.join(__dirname, 'views/nuevoProducto.html'),
+        protocol: 'file',
+        slashes: true
+    }));
+}
 
 const menu = [
     {
@@ -43,6 +56,13 @@ const menu = [
                 accelerator: 'Ctrl+N',
                 click() {
                     crearCliente();
+                }
+            },
+            {
+                label: 'Registrar Producto',
+                accelerator: 'Crlt+P',
+                click() {
+                    nuevoProducto();
                 }
             }
         ]
